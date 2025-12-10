@@ -1,0 +1,74 @@
+{
+    "info": {
+        "_postman_id": "photo-server-api",
+        "name": "Photo Server API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Find Photos",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/photos?latitude=40.7128&longitude=-74.0060&radius=1000",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "photos"
+                    ],
+                    "query": [
+                        {
+                            "key": "latitude",
+                            "value": "40.7128",
+                            "description": "Latitude of the center point"
+                        },
+                        {
+                            "key": "longitude",
+                            "value": "-74.0060",
+                            "description": "Longitude of the center point"
+                        },
+                        {
+                            "key": "radius",
+                            "value": "1000",
+                            "description": "Radius in meters"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Save Photo",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060,\n    \"url\": \"https://example.com/photo.jpg\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/photos",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "photos"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
