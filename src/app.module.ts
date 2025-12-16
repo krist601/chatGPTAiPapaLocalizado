@@ -15,6 +15,8 @@ import { PhotoModel, PhotoSchema } from './infrastructure/adapters/repository/ph
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         uri: configService.get<string>('MONGO_URI'),
+        dbName: configService.get<string>('MONGO_DB') || 'StreetView',
+
       }),
       inject: [ConfigService],
     }),
