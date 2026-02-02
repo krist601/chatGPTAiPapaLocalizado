@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { timestamp } from 'rxjs';
 
 export type PhotoDocument = PhotoModel & Document;
 
@@ -22,7 +23,9 @@ export class PhotoModel {
     location: {
         type: string;
         coordinates: [number, number]; // [longitude, latitude]
-    };
+    }
+    @Prop({ type: Date, required: false, default: null })
+    timestamp: Date;
 }
 
 export const PhotoSchema = SchemaFactory.createForClass(PhotoModel);

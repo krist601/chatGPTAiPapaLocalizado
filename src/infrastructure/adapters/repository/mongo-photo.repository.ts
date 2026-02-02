@@ -31,6 +31,7 @@ export class MongoPhotoRepository implements PhotoRepository {
             photo.location.coordinates[1], // latitude
             photo.location.coordinates[0], // longitude
             photo.url,
+            photo.timestamp
         ));
     }
 

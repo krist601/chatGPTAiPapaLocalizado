@@ -9,7 +9,7 @@ export class SavePhotoUseCase {
     ) { }
 
     async execute(latitude: number, longitude: number, url: string): Promise<void> {
-        const photo = new Photo('', latitude, longitude, url);
+        const photo = new Photo('', latitude, longitude, url, new Date());
         await this.photoRepository.save(photo);
     }
 }

@@ -4,5 +4,6 @@ export class Photo {
     public readonly latitude: number,
     public readonly longitude: number,
     public readonly url: string,
+    public readonly timestamp: Date
   ) {}
 }
